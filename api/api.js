@@ -1,5 +1,6 @@
 const express = require('express');
 const beerRouter = require('./beer');
+const wineRouter = require('./wine');
 
 const apiRouter = express.Router();
 
@@ -8,5 +9,6 @@ apiRouter.get('/', (req, res, next) => {
 });
 
 apiRouter.use('/beer', beerRouter);
+apiRouter.use('/wine', wineRouter);
 
 module.exports = apiRouter;
