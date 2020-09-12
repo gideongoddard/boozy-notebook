@@ -8,11 +8,11 @@ class Banner extends React.Component {
 
     render() {
         return (
-            <section class="main-banner">
-                <div class="main-banner-content">
+            <section className="main-banner">
+                <div className="main-banner-content">
                     <h1>Boozy Notebook</h1>
                     <p>Remember those tasty beers & wines that you usually forget!</p>
-                    <a class="btn btn-primary" href="#">Add a drink</a>
+                    <a className="btn btn-primary" href="#">Add a drink</a>
                 </div>
             </section>
         )

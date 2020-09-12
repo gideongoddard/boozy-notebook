@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Banner from '../Banner/Banner';
+import Drinks from '../Drinks/Drinks';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class App extends React.Component {
     return (
       <main>
         <Banner />
+        <Drinks />
         <ul>
           {this.state.beers.map(beer => (
             <li key={beer.name}>
