@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Banner from '../Banner/Banner';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,13 +34,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <ul>
-        {this.state.beers.map(beer => (
-          <li key={beer.name}>
-            {beer.brewery} {beer.name}
-          </li>
-        ))}
-      </ul>
+      <main>
+        <Banner />
+        <ul>
+          {this.state.beers.map(beer => (
+            <li key={beer.name}>
+              {beer.brewery} {beer.name}
+            </li>
+          ))}
+        </ul>
+      </main>
     );
   }
 }

@@ -1,13 +1,81 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* FONT SIZES */
+  --type-xxxx-small: calc(10px + 0.3vw);
+  --type-xxx-small: calc(12px + 0.3vw);
+  --type-xx-small: calc(14px + 0.3vw);
+  --type-x-small: calc(16px + 0.3vw);
+  --type-small: calc(18px + 0.3vw);
+  --type-medium: calc(20px + 0.3vw);
+  --type-large: calc(24px + 0.3vw);
+  --type-x-large: calc(30px + 0.3vw);
+  --type-xx-large: calc(36px + 0.3vw);
+  --type-xxx-large: calc(48px + 0.3vw);
+  --type-xxxx-large: calc(60px + 0.3vw);
+
+  /* LINE HEIGHTS */
+  --lh-sm: 1.1;
+  --lh-med: 1.25;
+  --lh-lg: 1.5; 
+
+  /* COLORS */
+  --color-primary-500: hsl(225, 100%, 10%);
+  --color-primary-450: hsl(225, 90%, 20%);
+  --color-primary-400: hsl(225, 80%, 30%);
+  --color-primary-350: hsl(225, 70%, 40%);
+  --color-primary-300: hsl(225, 60%, 50%);
+  --color-primary-200: hsl(225, 80%, 70%);
+  --color-primary-100: hsl(225, 100%, 90%);
+
+  --color-neutral-500: hsl(209, 15%, 28%);
+  --color-neutral-400: hsl(207, 12%, 43%);
+  --color-neutral-300: hsl(208, 12%, 58%);
+  --color-neutral-200: hsl(210, 16%, 76%);
+  --color-neutral-100: hsl(208, 21%, 88%);
+  
+  --color-accent-500: hsl(160, 100%, 10%);
+  --color-accent-400: hsl(160, 80%, 30%);
+  --color-accent-300: hsl(160, 60%, 50%);
+  --color-accent-200: hsl(160, 80%, 70%);
+  --color-accent-100: hsl(160, 100%, 90%);
+  
+  --color-warning-500: hsl(45, 100%, 30%);
+  --color-warning-400: hsl(50, 100%, 40%);
+  --color-warning-300: hsl(55, 100%, 50%);
+  --color-warning-200: hsl(55, 100%, 70%);
+  --color-warning-100: hsl(55, 100%, 90%);
+  
+  --color-destruct-500: hsl(0, 100%, 15%);
+  --color-destruct-400: hsl(0, 80%, 30%);
+  --color-destruct-300: hsl(0, 60%, 50%);
+  --color-destruct-200: hsl(0, 80%, 65%);
+  --color-destruct-100: hsl(0, 100%, 80%);
+
+  --color-low-opacity: hsla(208, 21%, 88%, .85);
+
+  /* SHADOWS */
+  --shadow-closest:
+      0 1px 3px hsla(0, 0%, 0%, .12),
+      0 1px 2px hsla(0, 0%, 0%, .25);
+  --shadow-close:
+      0 3px 6px hsla(0, 0%, 0%, .15),
+      0 2px 4px hsla(0, 0%, 0%, .12);
+  --shadow-medium:
+      0 10px 20px hsla(0, 0%, 0%, .15),
+      0 3px 6px hsla(0, 0%, 0%, .1);
+  --shadow-far:
+      0 15px 25px hsla(0, 0%, 0%, .15),
+      0 5px 10px hsla(0, 0%, 0%, .05);
+  --shadow-furthest:
+      0 20px 40px hsla(0, 0%, 0%, .2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--color-neutral-100);
+  background-color: var(--color-primary-450);
 }
