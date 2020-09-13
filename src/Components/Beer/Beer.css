@@ -1,0 +1,43 @@
+.beer-fridge {
+    border-radius: 7px;
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-500);
+    margin: 50px 0;
+    box-shadow: var(--shadow-close);
+}
+
+.bf-head {
+    height: 50px;
+    border-radius: 7px 7px 0 0;
+    background-color: var(--color-primary-450);
+    color: var(--color-primary-100);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bf-head h3 {
+    text-transform: uppercase;
+    font-size: var(--type-xx-small);
+}
+
+.beer-fridge ul {
+    margin: 0;
+    padding: 0;
+}
+
+.beer, .beer-heading {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.beer span, .beer-heading span {
+    padding: 15px;
+}
+
+.beer-heading {
+    font-weight: 500;
+    background-color: var(--color-primary-300);
+    color: white;
+}

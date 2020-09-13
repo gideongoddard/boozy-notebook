@@ -1,11 +1,12 @@
 .drinks-container h2 {
     text-align: center;
-    margin: 20px 0;
+    margin: 30px 0 20px 0;
+    color: white;
 }
 
 .drinks-container p {
     text-align: center;
-    color: var(--color-primary-200);
+    color: var(--color-primary-450);
     font-weight: 600;
     font-size: var(--type-medium);
 }

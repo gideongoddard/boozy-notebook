@@ -37,14 +37,7 @@ class App extends React.Component {
     return (
       <main>
         <Banner />
-        <Drinks />
-        <ul>
-          {this.state.beers.map(beer => (
-            <li key={beer.name}>
-              {beer.brewery} {beer.name}
-            </li>
-          ))}
-        </ul>
+        <Drinks beers={this.state.beers} />
       </main>
     );
   }
