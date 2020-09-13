@@ -6,10 +6,15 @@ import Drinks from '../Drinks/Drinks';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       isLoaded: false,
-      beers: []
+      beers: [],
+      wines: []
     };
+
+    this.getBeers = this.getBeers.bind(this);
+    this.getWines = this.getWines.bind(this);
   }
 
   getBeers() {
@@ -26,18 +31,36 @@ class App extends React.Component {
           isLoaded: true,
           error
         });
+      }) 
+  }
+
+  getWines() {
+    fetch("http://localhost:4000/api/wine")
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({
+          isLoaded: true,
+          wines: result.wines
+        });
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
       })
   }
 
   componentWillMount() {
     this.getBeers();
+    this.getWines();
   }
 
   render() {
     return (
       <main>
         <Banner />
-        <Drinks beers={this.state.beers} />
+        <Drinks beers={this.state.beers} wines={this.state.wines} />
       </main>
     );
   }
