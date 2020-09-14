@@ -1,0 +1,37 @@
+label {
+    color: var(--color-neutral-500);
+    font-size: var(--type-x-small);
+}
+
+.bold-label {
+    font-weight: 500;
+}
+
+input[type="text"] {
+    width: 100%;
+    margin: 10px 0 25px 0;
+    padding: 15px 20px;
+    border-radius: 7px;
+    border: 1px solid var(--color-neutral-100);
+    box-shadow: 0 1px 1px hsla(200, 20%, 30%, .3) inset;
+    background-color: var(--color-neutral-100);
+    font-size: var(--type-x-small);
+
+}
+
+form p {
+    color: var(--color-neutral-500);
+    margin: 0 0 10px 0;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.radio-fields {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}

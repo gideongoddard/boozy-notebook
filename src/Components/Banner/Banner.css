@@ -9,7 +9,7 @@
   }
   
   .main-banner-content {
-    background-color: var(--color-low-opacity);
+    background-color: var(--color-low-opacity-light);
     height: inherit;
     width: 100%;
     padding: 0 5%;

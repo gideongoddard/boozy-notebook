@@ -23,6 +23,7 @@
   --color-primary-400: hsl(225, 80%, 30%);
   --color-primary-350: hsl(225, 70%, 40%);
   --color-primary-300: hsl(225, 60%, 50%);
+  --color-primary-250: hsl(225, 70%, 60%);
   --color-primary-200: hsl(225, 80%, 70%);
   --color-primary-100: hsl(225, 100%, 90%);
 
@@ -30,7 +31,7 @@
   --color-neutral-400: hsl(207, 12%, 43%);
   --color-neutral-300: hsl(208, 12%, 58%);
   --color-neutral-200: hsl(210, 16%, 76%);
-  --color-neutral-100: hsl(208, 21%, 88%);
+  --color-neutral-100: hsl(208, 21%, 95%);
   
   --color-accent-500: hsl(160, 100%, 10%);
   --color-accent-400: hsl(160, 80%, 30%);
@@ -50,7 +51,8 @@
   --color-destruct-200: hsl(0, 80%, 65%);
   --color-destruct-100: hsl(0, 100%, 80%);
 
-  --color-low-opacity: hsla(208, 21%, 88%, .85);
+  --color-low-opacity-light: hsla(208, 21%, 88%, .85);
+  --color-low-opacity-dark: hsla(209, 15%, 28%, .6);
 
   /* SHADOWS */
   --shadow-closest:

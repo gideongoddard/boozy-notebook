@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Banner from '../Banner/Banner';
 import Drinks from '../Drinks/Drinks';
+import Form from '../Form/Form';
 
 class App extends React.Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
+        <Form />
         <Banner />
         <Drinks beers={this.state.beers} wines={this.state.wines} />
       </main>
