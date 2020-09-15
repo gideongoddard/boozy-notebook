@@ -47,6 +47,7 @@ h3 {
   background-color: var(--color-primary-300);
   color: var(--color-neutral-100);
   margin: 20px 0;
+  transition: all 300ms;
 }
 
 .btn-primary:hover {
