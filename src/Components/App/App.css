@@ -29,10 +29,12 @@ h3 {
 }
 
 .btn {
+  display: inline-block;
   border-radius: 30px;
   text-decoration: none;
   cursor: pointer;
   box-shadow: var(--shadow-closest);
+  border: none;
 }
 
 .btn:active {

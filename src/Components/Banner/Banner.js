@@ -2,8 +2,13 @@ import React from 'react';
 import './Banner.css';
 
 class Banner extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super()
+        this.handleFormToggle = this.handleFormToggle.bind(this);
+    }
+
+    handleFormToggle() {
+        this.props.onFormToggle();
     }
 
     render() {
@@ -12,7 +17,7 @@ class Banner extends React.Component {
                 <div className="main-banner-content">
                     <h1>Boozy Notebook</h1>
                     <p>Remember those tasty beers & wines that you usually forget!</p>
-                    <a className="btn btn-primary" href="#">Add a drink</a>
+                    <div className="btn btn-primary" onClick={this.handleFormToggle}>Add a drink</div>
                 </div>
             </section>
         )

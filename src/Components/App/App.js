@@ -11,11 +11,21 @@ class App extends React.Component {
     this.state = {
       isLoaded: false,
       beers: [],
-      wines: []
+      wines: [],
+      form: false
     };
 
     this.getBeers = this.getBeers.bind(this);
     this.getWines = this.getWines.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
+  }
+
+  toggleForm() {
+    if (this.state.form === false) {
+      this.setState({form: true});
+    } else {
+      this.setState({form: false});
+    }
   }
 
   getBeers() {
@@ -60,8 +70,8 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Form />
-        <Banner />
+        <Form form={this.state.form} onFormToggle={this.toggleForm} />
+        <Banner form={this.state.form} onFormToggle={this.toggleForm} />
         <Drinks beers={this.state.beers} wines={this.state.wines} />
       </main>
     );

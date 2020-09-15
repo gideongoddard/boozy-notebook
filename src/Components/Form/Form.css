@@ -39,10 +39,15 @@
     font-size: var(--type-small);
 }
 
+.close:hover {
+    color: var(--color-primary-300);
+}
+
 .modal-content h1 {
     color: var(--color-primary-350);
     font-size: var(--type-x-large);
     text-align: center;
+    font-weight: 600;
 }
 
 .tabs {
@@ -65,6 +70,10 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+}
+
+.tab:active {
+    box-shadow: none;
 }
 
 .tab:hover {

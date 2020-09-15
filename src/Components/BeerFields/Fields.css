@@ -1,10 +1,11 @@
 label {
     color: var(--color-neutral-500);
-    font-size: var(--type-x-small);
+    font-size: var(--type-xx-small);
 }
 
 .bold-label {
     font-weight: 500;
+    font-size: var(--type-x-small);
 }
 
 input[type="text"] {
