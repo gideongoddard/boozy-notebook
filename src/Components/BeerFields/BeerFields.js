@@ -7,6 +7,7 @@ class BeerFields extends React.Component {
         this.handleNameInput = this.handleNameInput.bind(this);
         this.handleBreweryInput = this.handleBreweryInput.bind(this);
         this.handleRatingInput = this.handleRatingInput.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleNameInput(e) {
@@ -21,9 +22,13 @@ class BeerFields extends React.Component {
         this.props.onUpdateNewBeerRating(e.target.value)
     }
 
+    handleSubmit() {
+        this.props.addBeer();
+    }
+
     render() {
         return (
-            <form style={{ display: this.props.display === 'beer' ? 'block' : 'none' }}>
+            <form style={{ display: this.props.display === 'beer' ? 'block' : 'none' }} onSubmit={this.handleSubmit}>
                 <label className="bold-label">
                     Beer name
                     <input type="text" name="name" placeholder="What's the name of your beer?" value={this.props.newBeer.name} onChange={this.handleNameInput} required />
