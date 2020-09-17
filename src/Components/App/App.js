@@ -146,7 +146,11 @@ class App extends React.Component {
             beers: beers,
             form: false,
             newBeer: {
-              beer: {}
+              beer: {
+                name: '',
+                brewery: '',
+                rating: 0,
+              }
             }
           })
           return res.json();
@@ -175,7 +179,11 @@ class App extends React.Component {
             wines: wines,
             form: false,
             newWine: {
-              wine: {}
+              wine: {
+                vineyard: '',
+                grape: '',
+                rating: 0,
+              }
             }
           })
           return res.json();
