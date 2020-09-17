@@ -22,8 +22,9 @@ class BeerFields extends React.Component {
         this.props.onUpdateNewBeerRating(e.target.value)
     }
 
-    handleSubmit() {
-        this.props.addBeer();
+    handleSubmit(event) {
+        this.props.addBeer(event.target.value);
+        event.preventDefault();
     }
 
     render() {
@@ -39,7 +40,7 @@ class BeerFields extends React.Component {
                 </label>
                 <p className="bold-label">Rating</p>
                 <div className="radio-fields">
-                    <input id="1" type="radio" name="rating" value="1" onChange={this.handleRatingInput} />
+                    <input id="1" type="radio" name="rating" value="1" onChange={this.handleRatingInput} required />
                     <label htmlFor="1">1 - disgusting, really just awful</label>
                 </div>
                 <div className="radio-fields">

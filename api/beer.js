@@ -35,6 +35,7 @@ beerRouter.get('/', (req, res, next) => {
 })
 
 beerRouter.post('/', (req, res, next) => {
+    console.log('beerRouter.post() called');
     const name = req.body.beer.name;
     const brewery = req.body.beer.brewery;
     const rating = req.body.beer.rating;
@@ -45,7 +46,7 @@ beerRouter.post('/', (req, res, next) => {
         $brewery: brewery,
         $rating: rating
     }
-
+    console.log(name);
     db.run(sql, values, function(err) {
         if (err) {
             next(err);

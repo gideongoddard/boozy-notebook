@@ -8,8 +8,8 @@ class Beer extends React.Component {
                 <div className="dc-head">
                     <h3>Beer Fridge</h3>
                 </div>
+                <div className="drink-heading"><span>Brewery</span><span>Beer</span><span>Rating</span></div>
                 <ul>
-                    <li className="drink-heading"><span>Brewery</span><span>Beer</span><span>Rating</span></li>
                     {this.props.beers.map(beer => (
                         <li className="drink" key={beer.id}>
                         <span>{beer.brewery}</span><span>{beer.name}</span><span>{beer.rating}</span>

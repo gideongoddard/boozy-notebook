@@ -8,8 +8,8 @@ class Wine extends React.Component {
                 <div className="dc-head">
                     <h3>Wine Cellar</h3>
                 </div>
+                <div className="drink-heading"><span>Vineyard</span><span>Grape(s)</span><span>Rating</span></div>
                 <ul>
-                    <li className="drink-heading"><span>Vineyard</span><span>Grape(s)</span><span>Rating</span></li>
                     {this.props.wines.map(wine => (
                         <li className="drink" key={wine.id}>
                         <span>{wine.vineyard}</span><span>{wine.grape}</span><span>{wine.rating}</span>

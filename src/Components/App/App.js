@@ -5,8 +5,8 @@ import Drinks from '../Drinks/Drinks';
 import Form from '../Form/Form';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       isLoaded: false,
@@ -21,9 +21,11 @@ class App extends React.Component {
         }
       },
       newWine: {
-        vineyard: '',
-        grape: '',
-        rating: 0,
+        wine: {
+          vineyard: '',
+          grape: '',
+          rating: 0,
+        }
       }
     };
 
@@ -34,6 +36,10 @@ class App extends React.Component {
     this.updateNewBeerBrewery = this.updateNewBeerBrewery.bind(this);
     this.updateNewBeerRating = this.updateNewBeerRating.bind(this);
     this.addBeer = this.addBeer.bind(this);
+    this.updateNewWineVineyard = this.updateNewWineVineyard.bind(this);
+    this.updateNewWineGrape = this.updateNewWineGrape.bind(this);
+    this.updateNewWineRating = this.updateNewWineRating.bind(this);
+    this.addWine = this.addWine.bind(this);
   }
 
   toggleForm() {
@@ -102,7 +108,32 @@ class App extends React.Component {
     })
   }
 
+  updateNewWineVineyard(vineyard) {
+    let newWine = this.state.newWine;
+    newWine.wine.vineyard = vineyard;
+    this.setState({
+      newWine: newWine
+    })
+  }
+
+  updateNewWineGrape(grape) {
+    let newWine = this.state.newWine;
+    newWine.wine.grape = grape;
+    this.setState({
+      newWine: newWine
+    })
+  }
+
+  updateNewWineRating(rating) {
+    let newWine = this.state.newWine;
+    newWine.wine.rating = rating;
+    this.setState({
+      newWine: newWine
+    })
+  }
+
   addBeer() {
+    let beers = this.state.beers;
     let newBeer = this.state.newBeer;
     let json = JSON.stringify(newBeer);
     const request = new Request('http://localhost:4000/api/beer', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: json});
@@ -110,6 +141,14 @@ class App extends React.Component {
     fetch(request)
       .then(res => {
         if (res.status === 201) {
+          beers.push(newBeer.beer);
+          this.setState({
+            beers: beers,
+            form: false,
+            newBeer: {
+              beer: {}
+            }
+          })
           return res.json();
         } else {
           throw new Error('Something went wrong');
@@ -122,7 +161,36 @@ class App extends React.Component {
       })
   }
 
-  componentWillMount() {
+  addWine() {
+    let wines = this.state.wines;
+    let newWine = this.state.newWine;
+    let json = JSON.stringify(newWine);
+    const request = new Request('http://localhost:4000/api/wine', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: json});
+
+    fetch(request)
+      .then(res => {
+        if (res.status === 201) {
+          wines.push(newWine.wine);
+          this.setState({
+            wines: wines,
+            form: false,
+            newWine: {
+              wine: {}
+            }
+          })
+          return res.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then(res => {
+        console.debug(res);
+      }).catch(err => {
+        console.error(err);
+      })
+  }
+
+  componentDidMount() {
     this.getBeers();
     this.getWines();
   }
@@ -130,7 +198,7 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Form form={this.state.form} onFormToggle={this.toggleForm} newBeer={this.state.newBeer} newWine={this.state.newWine} onUpdateNewBeerName={this.updateNewBeerName} onUpdateNewBeerBrewery={this.updateNewBeerBrewery} onUpdateNewBeerRating={this.updateNewBeerRating} addBeer={this.addBeer} />
+        <Form form={this.state.form} onFormToggle={this.toggleForm} newBeer={this.state.newBeer} newWine={this.state.newWine} onUpdateNewBeerName={this.updateNewBeerName} onUpdateNewBeerBrewery={this.updateNewBeerBrewery} onUpdateNewBeerRating={this.updateNewBeerRating} onUpdateNewWineVineyard={this.updateNewWineVineyard} onUpdateNewWineGrape={this.updateNewWineGrape} onUpdateNewWineRating={this.updateNewWineRating} addBeer={this.addBeer} addWine={this.addWine} />
         <Banner form={this.state.form} onFormToggle={this.toggleForm} />
         <Drinks beers={this.state.beers} wines={this.state.wines} />
       </main>
