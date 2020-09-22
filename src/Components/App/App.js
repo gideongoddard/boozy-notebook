@@ -206,9 +206,9 @@ class App extends React.Component {
   render() {
     return (
       <main>
-        <Form form={this.state.form} onFormToggle={this.toggleForm} newBeer={this.state.newBeer} newWine={this.state.newWine} onUpdateNewBeerName={this.updateNewBeerName} onUpdateNewBeerBrewery={this.updateNewBeerBrewery} onUpdateNewBeerRating={this.updateNewBeerRating} onUpdateNewWineVineyard={this.updateNewWineVineyard} onUpdateNewWineGrape={this.updateNewWineGrape} onUpdateNewWineRating={this.updateNewWineRating} addBeer={this.addBeer} addWine={this.addWine} />
+        <Form form={this.state.form} onFormToggle={this.toggleForm} newBeer={this.state.newBeer.beer} newWine={this.state.newWine.wine} onUpdateNewBeerName={this.updateNewBeerName} onUpdateNewBeerBrewery={this.updateNewBeerBrewery} onUpdateNewBeerRating={this.updateNewBeerRating} onUpdateNewWineVineyard={this.updateNewWineVineyard} onUpdateNewWineGrape={this.updateNewWineGrape} onUpdateNewWineRating={this.updateNewWineRating} addBeer={this.addBeer} addWine={this.addWine} />
         <Banner form={this.state.form} onFormToggle={this.toggleForm} />
-        <Drinks beers={this.state.beers} wines={this.state.wines} />
+        <Drinks beers={this.state.beers} wines={this.state.wines} form={this.state.form} onFormToggle={this.toggleForm} />
       </main>
     );
   }

@@ -10,3 +10,17 @@
     font-weight: 600;
     font-size: var(--type-medium);
 }
+
+.drinks-intro img {
+    max-width: 800px;
+    display: block;
+    margin: auto;
+    border-radius: 7px;
+    box-shadow: var(--shadow-close);
+}
+
+#btn-first {
+    display: block;
+    margin: 30px auto;
+    width: fit-content;
+}

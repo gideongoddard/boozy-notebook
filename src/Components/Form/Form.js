@@ -38,20 +38,24 @@ class Form extends React.Component {
     }
 
     render() {
-        return (
-            <div style={{ display: this.props.form ? 'flex' : 'none' }} className="modal">
-                <div className="modal-content">
-                    <div className="close" onClick={this.handleFormToggle}>X</div>
-                    <h1>What are you drinking?</h1>
-                    <div className="tabs">
-                        <h2 className={`tab${this.state.display === 'beer' ? ' active' : ''}`} onClick={this.handleBeerFields}>Beer</h2>
-                        <h2 className={`tab${this.state.display === 'wine' ? ' active' : ''}`} onClick={this.handleWineFields}>Wine</h2>
+        if (!this.props.form) {
+            return null;
+        } else {
+            return (
+                <div className="modal">
+                    <div className="modal-content">
+                        <div className="close" onClick={this.handleFormToggle}>X</div>
+                        <h1>What are you drinking?</h1>
+                        <div className="tabs">
+                            <h2 className={`tab${this.state.display === 'beer' ? ' active' : ''}`} onClick={this.handleBeerFields}>Beer</h2>
+                            <h2 className={`tab${this.state.display === 'wine' ? ' active' : ''}`} onClick={this.handleWineFields}>Wine</h2>
+                        </div>
+                        <BeerFields display={this.state.display} newBeer={this.props.newBeer} onUpdateNewBeerName={this.props.onUpdateNewBeerName} onUpdateNewBeerBrewery={this.props.onUpdateNewBeerBrewery} onUpdateNewBeerRating={this.props.onUpdateNewBeerRating} addBeer={this.props.addBeer} />
+                        <WineFields display={this.state.display} newWine={this.props.newWine} onUpdateNewWineVineyard={this.props.onUpdateNewWineVineyard} onUpdateNewWineGrape={this.props.onUpdateNewWineGrape} onUpdateNewWineRating={this.props.onUpdateNewWineRating} addWine={this.props.addWine} />
                     </div>
-                    <BeerFields display={this.state.display} newBeer={this.props.newBeer} onUpdateNewBeerName={this.props.onUpdateNewBeerName} onUpdateNewBeerBrewery={this.props.onUpdateNewBeerBrewery} onUpdateNewBeerRating={this.props.onUpdateNewBeerRating} addBeer={this.props.addBeer} />
-                    <WineFields display={this.state.display} newWine={this.props.newWine} onUpdateNewWineVineyard={this.props.onUpdateNewWineVineyard} onUpdateNewWineGrape={this.props.onUpdateNewWineGrape} onUpdateNewWineRating={this.props.onUpdateNewWineRating} addWine={this.props.addWine} />
                 </div>
-            </div>
-        )
+            )
+        }
     }
 }
 
