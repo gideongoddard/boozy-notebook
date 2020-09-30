@@ -28,3 +28,26 @@ describe('User visits the app', function() {
         assert.equal(h1, 'Boozy Notebook');
     })
 })
+
+describe('User clicks button to add a drink', function() {
+    this.timeout(10000);
+
+    beforeEach(async function() {
+        browser = await puppeteer.launch({timeout: 10000});
+        page = await browser.newPage();
+        await page.goto('http://localhost:3000/');
+    })
+
+    afterEach( async function() {
+        await browser.close();
+    })
+
+    it('should open the form for adding drinks', async function() {
+        // await page.click('#add-drink-2', {clickCount: 1});
+        await page.evaluate(() => {
+            document.querySelector('#add-drink').click();
+        })
+        const formHeading = await page.$eval('h1', heading => heading.innerText);
+        assert.equal(formHeading, 'What are you drinking?');
+    })
+})

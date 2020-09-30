@@ -17,7 +17,7 @@ class Banner extends React.Component {
                 <div className="main-banner-content">
                     <h1>Boozy Notebook</h1>
                     <p>Remember those tasty beers & wines that you usually forget!</p>
-                    <div className="btn btn-primary" onClick={this.handleFormToggle}>Add a drink</div>
+                    <div id="add-drink" className="btn btn-primary" onClick={this.handleFormToggle}>Add a drink</div>
                 </div>
             </section>
         )
